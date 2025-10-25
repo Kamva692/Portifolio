@@ -3,958 +3,494 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revit Learning Hub - Tutorials & Test Examples for Students</title>
+    <meta name="description" content="Lizalise Buwa - A passionate Civil Engineering student with expertise in Full Stack Web Development, AutoCAD, and Revit. Discover my portfolio of engineering and technology projects.">
+    <title>Lizalise Buwa | Civil Engineer & Full Stack Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #0067b3;
-            --secondary: #003b5c;
-            --accent: #ff6b00;
-            --light: #f5f9fc;
-            --dark: #2c3e50;
-            --success: #28a745;
-            --warning: #ffc107;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 1rem 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo i {
-            margin-right: 10px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 1.5rem;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 5px 10px;
-            border-radius: 4px;
-        }
-
-        nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url("https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80")
-                    no-repeat center center/cover;
-            color: white;
-            padding: 5rem 0;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--accent);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #e55f00;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--accent);
-            color: var(--accent);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--accent);
-            color: white;
-        }
-
-        /* Signup Bar */
-        .signup-bar {
-            background-color: var(--primary);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        .signup-bar h3 {
-            margin-bottom: 1rem;
-        }
-
-        .signup-form {
-            max-width: 500px;
-            margin: 0 auto;
-            display: flex;
-            gap: 1rem;
-        }
-
-        .signup-form input {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-        }
-
-        .signup-form button {
-            padding: 10px 20px;
-        }
-
-        /* Main Content */
-        .main-content {
-            padding: 3rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--dark);
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-
-        .section-title p {
-            color: var(--dark);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Tutorials Section */
-        .tutorials-section, .tests-section, .question-papers-section, .testimonials-section {
-            background-color: white;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 4rem;
-        }
-
-        .tutorial-categories {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .category-btn {
-            padding: 10px 20px;
-            margin: 5px;
-            background: #f1f1f1;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .category-btn.active, .category-btn:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .tutorials-grid, .tests-grid, .papers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .tutorial-card, .test-card, .paper-card {
-            border: 1px solid #eee;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .tutorial-card:hover, .test-card:hover, .paper-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .tutorial-video {
-            position: relative;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-        }
-
-        .tutorial-video iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .tutorial-content, .test-content, .paper-content {
-            padding: 1rem;
-        }
-
-        .tutorial-content h4, .test-content h3, .paper-content h3 {
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-
-        .test-img, .paper-img {
-            height: 200px;
-            background-color: #f5f5f5;
-            background-position: center;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 4rem;
-        }
-
-        /* Testimonials Section */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .testimonial-card p {
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-card cite {
-            display: block;
-            font-weight: bold;
-            color: var(--primary);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--secondary);
-            color: white;
-            padding: 3rem 0 1rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .footer-section p {
-            margin-bottom: 1rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-links a {
-            color: #ddd;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-icons a {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: var(--accent);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            nav ul {
-                margin-top: 1rem;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-
-            nav ul li {
-                margin: 0.5rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .tutorials-section, .tests-section, .question-papers-section, .testimonials-section {
-                padding: 1.5rem;
-            }
-
-            .signup-form {
-                flex-direction: column;
-            }
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-content">
-            <div class="logo">
-                <i class="fas fa-drafting-compass"></i>
-                <span>Revit Learning Hub</span>
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <div class="profile-photo">
+                <img src="https://via.placeholder.com/200" alt="Lizalise Buwa">
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#tutorials">Tutorials</a></li>
-                    <li><a href="#tests">Test Examples</a></li>
-                    <li><a href="#question-papers">Question Papers</a></li>
-                    <li><a href="#resources">Resources</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                </ul>
-            </nav>
+            <h1 class="hero-title">Lizalise Buwa</h1>
+            <h2 class="hero-subtitle">Civil Engineering & Full Stack Developer</h2>
+            <p class="hero-summary">A passionate and innovative Civil Engineering student with a strong affinity for modern technology and design. Excels at merging technical precision with creative problem-solving.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#about"><i class="fas fa-chevron-down"></i></a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Master Autodesk Revit as a University Student</h1>
-            <p>
-                Boost your architecture and engineering career with free video
-                tutorials, test examples, and student-focused resources in BIM.
-            </p>
-            <a href="#tutorials" class="btn">Start Learning for Free</a>
-        </div>
-    </section>
-
-    <!-- Signup Bar -->
-    <section class="signup-bar">
+    <!-- About Section -->
+    <section class="about" id="about">
         <div class="container">
-            <h3>Join Thousands of University Students Mastering Revit</h3>
-            <form class="signup-form">
-                <input
-                    type="email"
-                    placeholder="Enter your university email"
-                    required
-                />
-                <button type="submit" class="btn">Get Free Resources</button>
-            </form>
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a dedicated Civil Engineering student at Durban University of Technology with a unique blend of technical and creative skills. My passion lies at the intersection of civil engineering and technology, where I leverage modern tools to create innovative solutions.</p>
+                    <ul class="about-highlights">
+                        <li><i class="fas fa-check-circle"></i> Eager to apply a unique skill set at the intersection of civil engineering and technology</li>
+                        <li><i class="fas fa-check-circle"></i> Experienced in structural design using AutoCAD 3D and Revit</li>
+                        <li><i class="fas fa-check-circle"></i> Full Stack Web Developer with modern JavaScript frameworks</li>
+                        <li><i class="fas fa-check-circle"></i> Proficient in project management and technical documentation</li>
+                    </ul>
+                    <div class="languages">
+                        <h3>Languages</h3>
+                        <span class="language-tag">English</span>
+                        <span class="language-tag">IsiXhosa</span>
+                    </div>
+                </div>
+                <div class="about-certificate">
+                    <h3>Full Stack Development Certificate</h3>
+                    <div class="certificate-card">
+                        <img src="https://via.placeholder.com/400x300/008080/ffffff?text=FNB+App+Academy+Certificate" alt="Full Stack Development Certificate">
+                        <div class="certificate-details">
+                            <p><strong>Awarded by:</strong> FNB App Academy</p>
+                            <p><strong>Date:</strong> 29 July 2025</p>
+                            <p><strong>Student Number:</strong> 6888D531AAC2D</p>
+                            <p><strong>Certificate Number:</strong> AOTYAA7025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="container main-content">
-        <!-- Tutorials Section -->
-        <section id="tutorials">
-            <div class="section-title">
-                <h2>Revit Video Tutorials</h2>
-                <p>
-                    From beginner basics to advanced techniques – perfect for university
-                    coursework and projects.
-                </p>
-            </div>
-
-            <div class="tutorials-section">
-                <div class="tutorial-categories">
-                    <button class="category-btn active">All Tutorials</button>
-                    <button class="category-btn">Beginner</button>
-                    <button class="category-btn">Intermediate</button>
-                    <button class="category-btn">Advanced</button>
-                </div>
-
-                <div class="tutorials-grid">
-                    <div class="tutorial-card" data-level="beginner">
-                        <div class="tutorial-video">
-                            <iframe
-                                src="https://www.youtube.com/embed/chom9hiewXI"
-                                title="Revit Tutorial 1"
-                                allowfullscreen
-                            ></iframe>
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <!-- Web Development -->
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>HTML & CSS</span>
+                            <span>90%</span>
                         </div>
-                        <div class="tutorial-content">
-                            <h4>Complete Revit Beginner Course</h4>
-                            <p>
-                                Learn the basics of Revit from scratch with this comprehensive
-                                beginner tutorial.
-                            </p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
                         </div>
                     </div>
-
-                    <div class="tutorial-card" data-level="advanced">
-                        <div class="tutorial-video">
-                            <iframe
-                                src="https://www.youtube.com/embed/fiUr9B2yKiI"
-                                title="Revit Tutorial 2"
-                                allowfullscreen
-                            ></iframe>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>JavaScript</span>
+                            <span>90%</span>
                         </div>
-                        <div class="tutorial-content">
-                            <h4>Advanced Modeling Techniques</h4>
-                            <p>
-                                Master advanced modeling techniques in Revit for complex
-                                architectural designs.
-                            </p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
                         </div>
                     </div>
-
-                    <div class="tutorial-card" data-level="intermediate">
-                        <div class="tutorial-video">
-                            <iframe
-                                src="https://www.youtube.com/embed/5K5YouLhQlg"
-                                title="Revit Tutorial 3"
-                                allowfullscreen
-                            ></iframe>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Computer Literacy</span>
+                            <span>95%</span>
                         </div>
-                        <div class="tutorial-content">
-                            <h4>Creating Detailed Families</h4>
-                            <p>
-                                Learn how to create and modify detailed Revit families for
-                                your projects.
-                            </p>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Test Examples Section -->
-        <section id="tests">
-            <div class="section-title">
-                <h2>Test Examples for Practice</h2>
-                <p>
-                    Hands-on test examples aligned with university curricula to
-                    reinforce your Revit knowledge.
-                </p>
-            </div>
-
-            <div class="tests-section">
-                <div class="tests-grid">
-                    <div class="test-card">
-                        <div class="test-img">
-                            <i class="fas fa-file-pdf"></i>
+                <!-- Engineering Tools -->
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Engineering Tools</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>AutoCAD 3D</span>
+                            <span>85%</span>
                         </div>
-                        <div class="test-content">
-                            <h3>Reinforced Concrete Design</h3>
-                            <p>
-                                Test examples focusing on flanged beams and reinforced
-                                concrete design principles.
-                            </p>
-                            <a href="http://faculty-legacy.arch.tamu.edu/anichols/index_files/courses/arch614/NS21-1cncrtdesign.pdf" class="btn" download>Download PDF</a>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
                         </div>
                     </div>
-
-                    <div class="test-card">
-                        <div class="test-img">
-                            <i class="fas fa-file-pdf"></i>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Revit</span>
+                            <span>85%</span>
                         </div>
-                        <div class="test-content">
-                            <h3>Shear Reinforcement</h3>
-                            <p>
-                                Test examples covering shear reinforcement calculations for
-                                rectangular RC beams.
-                            </p>
-                            <a href="http://www.ce.memphis.edu/4135/pdf/notes/chap_9_1_shear.pdf" class="btn" download>Download PDF</a>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
                         </div>
                     </div>
-
-                    <div class="test-card">
-                        <div class="test-img">
-                            <i class="fas fa-file-pdf"></i>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Civil Designer</span>
+                            <span>80%</span>
                         </div>
-                        <div class="test-content">
-                            <h3>Steel Design - Compression</h3>
-                            <p>
-                                Test examples on compression members and steel column design.
-                            </p>
-                            <a href="https://www.egr.msu.edu/~harichan/classes/ce405/chap3.pdf" class="btn" download>Download PDF</a>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Management -->
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Project Management</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Microsoft Project</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Microsoft 365</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Documentation</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Question Papers Section -->
-        <section id="question-papers">
-            <div class="section-title">
-                <h2>Structural Detailing Question Papers</h2>
-                <p>
-                    Download past exam papers and tests for Structural Detailing (STDT201) course.
-                </p>
+    <!-- Education & Certifications Section -->
+    <section class="education" id="education">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Full Stack in Web Development</h3>
+                        <h4>IT Varsity - FNB App Academy</h4>
+                        <span class="timeline-date">2025</span>
+                        <p>Comprehensive training in modern web development technologies including HTML5, CSS3, JavaScript, and full-stack frameworks. Awarded certificate of completion with distinction.</p>
+                        <button class="btn-certificate" onclick="openModal('cert1')">View Certificate</button>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Diploma in Civil Engineering and Technology</h3>
+                        <h4>Durban University of Technology</h4>
+                        <span class="timeline-date">Ongoing</span>
+                        <p>Comprehensive study of structural design, construction management, surveying, and civil infrastructure development.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Matric</h3>
+                        <h4>St John's College</h4>
+                        <span class="timeline-date">Completed</span>
+                        <p>Completed secondary education with a focus on mathematics and science.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="question-papers-section">
-                <div class="papers-grid">
-                    <div class="paper-card">
-                        <div class="paper-img">
-                            <i class="fas fa-file-pdf"></i>
+            <div class="certifications">
+                <h3>Professional Certifications</h3>
+                <div class="cert-grid">
+                    <div class="cert-badge" onclick="openModal('autocad')">
+                        <i class="fas fa-cube"></i>
+                        <h4>AutoCAD 3D Modelling</h4>
+                        <p>Advanced 3D modeling and visualization</p>
+                    </div>
+                    <div class="cert-badge" onclick="openModal('revit')">
+                        <i class="fas fa-building"></i>
+                        <h4>Revit Reinforced Concrete</h4>
+                        <p>Structural design and BIM expertise</p>
+                    </div>
+                    <div class="cert-badge" onclick="openModal('pm')">
+                        <i class="fas fa-project-diagram"></i>
+                        <h4>Project Management</h4>
+                        <p>Planning and execution strategies</p>
+                    </div>
+                    <div class="cert-badge" onclick="openModal('literacy')">
+                        <i class="fas fa-laptop"></i>
+                        <h4>Computer Literacy</h4>
+                        <p>Microsoft Office Suite mastery</p>
+                    </div>
+                    <div class="cert-badge" onclick="openModal('webdesign')">
+                        <i class="fas fa-palette"></i>
+                        <h4>Web Design Intro</h4>
+                        <p>UI/UX and design principles</p>
+                    </div>
+                    <div class="cert-badge" onclick="openModal('fullstack')">
+                        <i class="fas fa-layer-group"></i>
+                        <h4>Full Stack Development</h4>
+                        <p>End-to-end web applications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/008080/ffffff?text=Structural+Design" alt="Structural Design Portfolio">
+                    </div>
+                    <div class="project-content">
+                        <h3>Structural Design Portfolio</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Revit</span>
+                            <span class="tech-tag">AutoCAD</span>
+                            <span class="tech-tag">3D Modeling</span>
                         </div>
-                        <div class="paper-content">
-                            <h3>Test 1 - Second Semester 2024</h3>
-                            <p>
-                                MEMO-TEST 1 SEM II 2024 STDT201-1 - Reinforced Concrete Column and Base
-                            </p>
-                            <a href="MEMO-TEST 1 SEM II 2024 STDT201-1.pdf" class="btn" download>Download PDF</a>
+                        <p>Comprehensive collection of structural design projects including residential and commercial buildings, showcasing BIM expertise and technical precision.</p>
+                        <div class="project-buttons">
+                            <a href="#" class="btn-small btn-primary">Live Demo</a>
+                            <a href="#" class="btn-small btn-secondary">View Code</a>
                         </div>
                     </div>
+                </div>
 
-                    <div class="paper-card">
-                        <div class="paper-img">
-                            <i class="fas fa-file-pdf"></i>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/008080/ffffff?text=Engineering+Calculator" alt="Engineering Calculator">
+                    </div>
+                    <div class="project-content">
+                        <h3>Interactive Engineering Calculator</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
                         </div>
-                        <div class="paper-content">
-                            <h3>Test 2 - Second Semester 2024</h3>
-                            <p>
-                                TEST 2 SEM II 2024 STDT201_Moderated-DANIEL-1-1 - Isometric and Plan View Drawing
-                            </p>
-                            <a href="TEST 2 SEM II 2024 STDT201_Moderated-DANIEL-1-1.pdf" class="btn" download>Download PDF</a>
+                        <p>Web-based calculator for common civil engineering calculations including beam analysis, concrete mix design, and structural load computations.</p>
+                        <div class="project-buttons">
+                            <a href="#" class="btn-small btn-primary">Live Demo</a>
+                            <a href="#" class="btn-small btn-secondary">View Code</a>
                         </div>
                     </div>
+                </div>
 
-                    <div class="paper-card">
-                        <div class="paper-img">
-                            <i class="fas fa-file-pdf"></i>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/008080/ffffff?text=Project+Dashboard" alt="Project Management Dashboard">
+                    </div>
+                    <div class="project-content">
+                        <h3>Project Management Dashboard</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">MS Project</span>
+                            <span class="tech-tag">Data Viz</span>
                         </div>
-                        <div class="paper-content">
-                            <h3>Control Test - Second Semester 2021</h3>
-                            <p>
-                                STDT201 Control Test - Reinforcement Layout and Bending Schedule
-                            </p>
-                            <a href="STDT201 Control Test.pdf" class="btn" download>Download PDF</a>
+                        <p>Interactive dashboard for tracking construction project progress, resource allocation, and timeline management with real-time updates.</p>
+                        <div class="project-buttons">
+                            <a href="#" class="btn-small btn-primary">Live Demo</a>
+                            <a href="#" class="btn-small btn-secondary">View Code</a>
                         </div>
                     </div>
+                </div>
 
-                    <div class="paper-card">
-                        <div class="paper-img">
-                            <i class="fas fa-file-word"></i>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/008080/ffffff?text=Portfolio+Website" alt="Portfolio Website">
+                    </div>
+                    <div class="project-content">
+                        <h3>Responsive Portfolio Website</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
                         </div>
-                        <div class="paper-content">
-                            <h3>Test 1 - Second Semester 2021</h3>
-                            <p>
-                                TEST 1 SECOND SEMETER 2021 STDT201 - MEMO - Reinforced Concrete Beam
-                            </p>
-                            <a href="TEST 1 SECOND SEMETER 2021 STDT201 - MEMO.docx" class="btn" download>Download DOCX</a>
+                        <p>Modern, responsive portfolio website showcasing projects and skills with smooth animations and mobile-first design principles.</p>
+                        <div class="project-buttons">
+                            <a href="#" class="btn-small btn-primary">Live Demo</a>
+                            <a href="#" class="btn-small btn-secondary">View Code</a>
                         </div>
                     </div>
+                </div>
 
-                    <div class="paper-card">
-                        <div class="paper-img">
-                            <i class="fas fa-file-pdf"></i>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/008080/ffffff?text=BIM+Integration" alt="BIM Integration Tool">
+                    </div>
+                    <div class="project-content">
+                        <h3>BIM Integration Tool</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Revit API</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Automation</span>
                         </div>
-                        <div class="paper-content">
-                            <h3>Re-Test - First Semester 2021</h3>
-                            <p>
-                                RE-TEST - Combined Footing, Slab, and Beam-to-Column Connection
-                            </p>
-                            <a href="RE-TEST.pdf" class="btn" download>Download PDF</a>
+                        <p>Automated tool for streamlining Revit workflows, including batch processing, parameter management, and model quality checks.</p>
+                        <div class="project-buttons">
+                            <a href="#" class="btn-small btn-primary">Live Demo</a>
+                            <a href="#" class="btn-small btn-secondary">View Code</a>
                         </div>
                     </div>
+                </div>
 
-                    <div class="paper-card">
-                        <div class="paper-img">
-                            <i class="fas fa-file-pdf"></i>
-                        </div>
-                        <div class="paper-content">
-                            <h3>Test 2 - First Semester 2021</h3>
-                            <p>
-                                TEST 2 FIRST SEMETER 2021 STDT201 final - Steel Column Connection
-                            </p>
-                            <a href="TEST 2 FIRST SEMETER 2021 STDT201 final.pdf" class="btn" download>Download PDF</a>
-                        </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/008080/ffffff?text=Civil+Design+App" alt="Civil Designer Application">
                     </div>
-
-                    <div class="paper-card">
-                        <div class="paper-img">
-                            <i class="fas fa-file-pdf"></i>
+                    <div class="project-content">
+                        <h3>Civil Design Application</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Civil Designer</span>
+                            <span class="tech-tag">AutoCAD</span>
+                            <span class="tech-tag">Surveying</span>
                         </div>
-                        <div class="paper-content">
-                            <h3>Test 1 - Second Semester 2020</h3>
-                            <p>
-                                Test 1 sem 2 2020 - Reinforced Concrete Beam and Column with Base
-                            </p>
-                            <a href="Test 1 sem 2 2020.pdf" class="btn" download>Download PDF</a>
-                        </div>
-                    </div>
-
-                    <div class="paper-card">
-                        <div class="paper-img">
-                            <i class="fas fa-file-pdf"></i>
-                        </div>
-                        <div class="paper-content">
-                            <h3>Structural Detailing Beams</h3>
-                            <p>
-                                Structural detailing beams [Autosaved] - Examples and Solutions
-                            </p>
-                            <a href="Structural detailing beams [Autosaved].pdf" class="btn" download>Download PDF</a>
-                        </div>
-                    </div>
-
-                    <div class="paper-card">
-                        <div class="paper-img">
-                            <i class="fas fa-file-pdf"></i>
-                        </div>
-                        <div class="paper-content">
-                            <h3>Footing or Foundation</h3>
-                            <p>
-                                Footing or Foundation - Isolated and Combined Footing Examples
-                            </p>
-                            <a href="Footing or Foundation.pdf" class="btn" download>Download PDF</a>
-                        </div>
-                    </div>
-
-                    <div class="paper-card">
-                        <div class="paper-img">
-                            <i class="fas fa-file-pdf"></i>
-                        </div>
-                        <div class="paper-content">
-                            <h3>Control Test Memo - 2021</h3>
-                            <p>
-                                CONTROL TEST SECOND SEMESTER 2021 STDT201 memo - Solutions
-                            </p>
-                            <a href="CONTROL TEST SECOND SEMESTER 2021 STDT201 memo.pdf" class="btn" download>Download PDF</a>
+                        <p>Road and infrastructure design projects including alignment, profiles, and cross-sections for civil engineering applications.</p>
+                        <div class="project-buttons">
+                            <a href="#" class="btn-small btn-primary">Live Demo</a>
+                            <a href="#" class="btn-small btn-secondary">View Code</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Testimonials Section -->
-        <section id="testimonials">
-            <div class="section-title">
-                <h2>What University Students Say</h2>
-                <p>
-                    Hear from students who boosted their grades and career prospects
-                    with our resources.
-                </p>
-            </div>
-
-            <div class="testimonials-section">
-                <div class="testimonials-grid">
-                    <div class="testimonial-card fade-in">
-                        <p>
-                            "This hub was a game-changer for my architecture thesis. The
-                            tutorials are clear and student-friendly!"
-                        </p>
-                        <cite>- Alex J., MIT Architecture Student</cite>
+    <!-- Awards Section -->
+    <section class="awards" id="awards">
+        <div class="container">
+            <h2 class="section-title">Awards & Recognition</h2>
+            <div class="awards-content">
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-trophy"></i>
                     </div>
-
-                    <div class="testimonial-card fade-in">
-                        <p>
-                            "As an engineering undergrad, the test examples helped me ace my
-                            structural design exams."
-                        </p>
-                        <cite>- Sarah K., Stanford University</cite>
-                    </div>
-
-                    <div class="testimonial-card fade-in">
-                        <p>
-                            "Free resources that feel premium. Perfect for broke college
-                            students like me!"
-                        </p>
-                        <cite>- Mike L., University of California</cite>
-                    </div>
+                    <h3>IT Varsity Full Stack Development Award</h3>
+                    <p>Awarded for exceptional performance and completion of the Full Stack in Web Development program at FNB App Academy.</p>
+                    <span class="award-date">July 2025</span>
+                    <button class="btn-certificate" onclick="openModal('cert1')">View Certificate</button>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Resources Section -->
-        <section id="resources">
-            <div class="section-title">
-                <h2>Additional Student Resources</h2>
-                <p>
-                    Extra tutorials and guides to support your university studies in
-                    Revit and BIM.
-                </p>
-            </div>
-
-            <div class="tutorials-section">
-                <div class="tutorials-grid">
-                    <div class="tutorial-card" data-level="beginner">
-                        <div class="tutorial-video">
-                            <iframe
-                                src="https://www.youtube.com/embed/SoNPH8a4pS4"
-                                title="Revit Families Tutorial"
-                                allowfullscreen
-                            ></iframe>
-                        </div>
-                        <div class="tutorial-content">
-                            <h4>Understanding Revit Families</h4>
-                            <p>
-                                Learn how to create and modify Revit families for custom
-                                components.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="tutorial-card" data-level="advanced">
-                        <div class="tutorial-video">
-                            <iframe
-                                src="https://www.youtube.com/embed/4hGngJ4-YyY"
-                                title="Revit Rendering"
-                                allowfullscreen
-                            ></iframe>
-                        </div>
-                        <div class="tutorial-content">
-                            <h4>Advanced Rendering Techniques</h4>
-                            <p>
-                                Master advanced rendering techniques for photorealistic
-                                visualizations.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="tutorial-card" data-level="intermediate">
-                        <div class="tutorial-video">
-                            <iframe
-                                src="https://www.youtube.com/embed/IlIzmTf7QeQ"
-                                title="Revit Sheets"
-                                allowfullscreen
-                            ></iframe>
-                        </div>
-                        <div class="tutorial-content">
-                            <h4>Creating Sheets in Revit</h4>
-                            <p>
-                                Learn how to create professional construction documentation
-                                sheets.
-                            </p>
-                        </div>
-                    </div>
+    <!-- QR Code Section -->
+    <section class="qr-section" id="qr">
+        <div class="container">
+            <h2 class="section-title">Quick Access</h2>
+            <div class="qr-content">
+                <div class="qr-text">
+                    <h3>Scan to Visit</h3>
+                    <p>Scan this QR code with your mobile device to quickly access this portfolio website from anywhere!</p>
+                    <p class="qr-url" id="websiteUrl">Loading URL...</p>
+                </div>
+                <div class="qr-code-container">
+                    <img src="qr_code.png" alt="QR Code to access portfolio" class="qr-image">
+                    <p class="qr-caption">Scan with your phone camera</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>22360235@dut4life.ac.za</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>chriskamva@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>079 644 6958</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Durban, South Africa</span>
+                        </div>
+                    </div>
+                    <div class="social-links-large">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:22360235@dut4life.ac.za" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>About Revit Learning Hub</h3>
-                    <p>
-                        Dedicated to providing free, high-quality Revit training for
-                        university students and aspiring BIM professionals.
-                    </p>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#tutorials">Tutorials</a></li>
-                        <li><a href="#tests">Test Examples</a></li>
-                        <li><a href="#question-papers">Question Papers</a></li>
-                        <li><a href="#resources">Resources</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Connect With Us</h3>
-                    <p>Follow us for student tips, updates, and freebies:</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
+            <p>&copy; 2025 Lizalise Buwa. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
-
-            <div class="footer-bottom">
-                <p>
-                    &copy; 2025 Revit Learning Hub. All rights reserved. Developed by
-                    professional software engineers for students.
-                </p>
-            </div>
+            <a href="#home" class="back-to-top">
+                <i class="fas fa-chevron-up"></i>
+                Back to Top
+            </a>
         </div>
     </footer>
 
-    <script>
-        // Enhanced JavaScript for category filtering and animations
-        document.addEventListener("DOMContentLoaded", function () {
-            const categoryButtons = document.querySelectorAll(".category-btn");
-            const tutorialCards = document.querySelectorAll(".tutorial-card");
+    <!-- Modal -->
+    <div class="modal" id="certificateModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="modalBody">
+                <!-- Content will be inserted dynamically -->
+            </div>
+        </div>
+    </div>
 
-            categoryButtons.forEach((button) => {
-                button.addEventListener("click", function () {
-                    // Remove active class from all buttons
-                    categoryButtons.forEach((btn) => btn.classList.remove("active"));
-
-                    // Add active class to clicked button
-                    this.classList.add("active");
-
-                    // Get the level (normalize to lowercase, remove ' tutorials' for 'All')
-                    let level = this.textContent
-                        .toLowerCase()
-                        .replace(" tutorials", "");
-
-                    // Filter cards
-                    tutorialCards.forEach((card) => {
-                        if (level === "all" || card.dataset.level === level) {
-                            card.style.display = "block";
-                        } else {
-                            card.style.display = "none";
-                        }
-                    });
-                });
-            });
-
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-                anchor.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute("href");
-                    if (targetId === "#") return;
-
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: "smooth",
-                        });
-                    }
-                });
-            });
-
-            // Fade-in animations on scroll
-            const fadeElements = document.querySelectorAll(".fade-in");
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("visible");
-                        }
-                    });
-                },
-                { threshold: 0.1 }
-            );
-
-            fadeElements.forEach((el) => observer.observe(el));
-
-            // Placeholder for form submission (e.g., console log or integrate with backend)
-            const signupForm = document.querySelector(".signup-form");
-            signupForm.addEventListener("submit", function (e) {
-                e.preventDefault();
-                alert(
-                    "Thank you for subscribing! Check your email for free resources."
-                );
-                signupForm.reset();
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
